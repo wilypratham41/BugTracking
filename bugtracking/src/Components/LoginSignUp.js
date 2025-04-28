@@ -26,27 +26,35 @@ function CloseLoginHandler(){
     SetLoginModal(false);
 }
 
-function LoginByUser(){
-    console.log("this is Username PWD entered"+username+ password);
-  const Credentials= {
-    username:username,
-    password:password,   
+async function LoginByUser() {
+  console.log(`Entered Username: ${username}, Password: ${password}`);
+  
+  const Credentials = {
+      username: username,
+      password: password,
   };
 
-try{
-  const response = axios.post('http://192.168.1.9:8089/JWT/login',Credentials);
-  if(response === "Successful"){
-    alert("login Sucessful");
-  }else{
-    alert("failed");
+  alert("Credentials: " + JSON.stringify(Credentials));
+
+  try {
+      const response = await axios.post('http://localhost:8089/JWT/login', Credentials);
+
+      if (response.data === "Successful") {
+          alert("Login Successful!");
+         
+      } else {
+          alert("Login Failed!");
+      }
+
+      Setusername('');
+      Setpassword('');
+      SetLoginModal(false);
+
+
+  } catch (error) {
+      console.error("Error occurred while Login:", error);
   }
-
-}catch(error){
-console.error("error occurred while Login")
 }
-
-
-};
 
 function SignupHandler(){
   SetSignupModal(true);
@@ -54,8 +62,39 @@ function SignupHandler(){
 function CloseSignUpHander(){
   SetSignupModal(false);
 }
-function SignipByUser(){
+async function SignipByUser(){  
   console.log("these details are entered by user"+username+ password+Name+Email);
+
+  const inputs = {
+    username: username,
+    password: password,
+    name: Name,
+    email: Email
+};
+
+alert("Credentials: " + JSON.stringify(inputs));
+
+try {
+    const response = await axios.post('http://localhost:8089/JWT/SignUp', inputs);
+
+    if (response.data === "Successful") {
+        alert("Login Successful!");
+       
+    } else {
+        alert("Login Failed!");
+    }
+
+    Setusername('');
+    Setpassword('');
+    SetName('');
+    SetEmail('');
+    SetSignupModal(false);
+
+
+} catch (error) {
+    console.error("Error occurred while Login:", error);
+}
+
 }
 
 
@@ -86,18 +125,20 @@ function SignipByUser(){
           borderRadius: '8px',
           outline: 'none'
         }}>
-            <button onClick={CloseLoginHandler} variant="outlined" style={{}}>
-            <i className="bi bi-x-circle"></i>
-            </button>
-                <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+            {/* <button  variant="outlined" style={{}}> */}
+            <i className="bi bi-x-circle" onClick={CloseLoginHandler}></i>
+            {/* </button> */}
+                <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center',gap:'15px'}}>
                   <h2>Login</h2>
-                    <label>Username</label>
-                    <input type='text' placeholder='enter Usernmae' value={username} onChange={((e)=>{Setusername(e.target.value)})}></input>
+                    
+                    
+                    <input  className="input" type='text' placeholder='Username' value={username} onChange={((e)=>{Setusername(e.target.value)})}></input>
+                    
+                    <input  className="input"type='password' placeholder='Password' value={password} onChange={((e)=>{Setpassword(e.target.value)})}></input>
 
-                    <label>password</label>
-                    <input type='password' placeholder='enter Password' value={password} onChange={((e)=>{Setpassword(e.target.value)})}></input>
+                    {/* <button type="button" class="btn btn-primary" >Login</button> */}
+                    <button type="button" className="btn btn-primary"onClick={LoginByUser} style={{width:'270px'}}>Login</button>
 
-                    <button onClick={LoginByUser}>Login</button>
                 </div>
         </div>
       </Modal>
