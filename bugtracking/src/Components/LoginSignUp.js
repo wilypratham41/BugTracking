@@ -37,9 +37,9 @@ async function LoginByUser() {
   alert("Credentials: " + JSON.stringify(Credentials));
 
   try {
-      const response = await axios.post('http://localhost:8089/JWT/login', Credentials);
+      const response = await axios.post("/JWT/login", Credentials);
 
-      if (response.data === "Successful") {
+      if (response.data.status === "success") {
           alert("Login Successful!");
          
       } else {
@@ -75,9 +75,9 @@ async function SignipByUser(){
 alert("Credentials: " + JSON.stringify(inputs));
 
 try {
-    const response = await axios.post('http://localhost:8089/JWT/SignUp', inputs);
+    const response = await axios.post("/JWT/signup", inputs);
 
-    if (response.data === "Successful") {
+    if (response.data.data === "Successful") {
         alert("Login Successful!");
        
     } else {
@@ -137,7 +137,7 @@ try {
                     <input  className="input"type='password' placeholder='Password' value={password} onChange={((e)=>{Setpassword(e.target.value)})}></input>
 
                     {/* <button type="button" class="btn btn-primary" >Login</button> */}
-                    <button type="button" className="btn btn-primary"onClick={LoginByUser} style={{width:'270px'}}>Login</button>
+                    <button type="button" className="btn btn-primary" onClick={LoginByUser} style={{width:'270px'}}>Login</button>
 
                 </div>
         </div>
@@ -167,22 +167,22 @@ try {
             <button onClick={CloseSignUpHander} variant="outlined" style={{}}>
             <i className="bi bi-x-circle"></i>
             </button>
-                <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center',gap:'10px'}}>
                   <h2>Signup</h2>
 
-                    <label>Name</label>
-                    <input type='text' placeholder='enter Name'onChange={((e)=>{SetName(e.target.value)})}></input>
+                    
+                    <input className="input" type='text' placeholder='enter Name'onChange={((e)=>{SetName(e.target.value)})}></input>
 
-                    <label>Username</label>
-                    <input type='text' placeholder='enter Usernmae' onChange={((e)=>{Setusername(e.target.value)})}></input>
+                    
+                    <input className="input" type='text' placeholder='enter Usernmae' onChange={((e)=>{Setusername(e.target.value)})}></input>
 
-                    <label>password</label>
-                    <input type='password' placeholder='enter Password' onChange={((e)=>{Setpassword(e.target.value)})}></input>
+                    
+                    <input className="input" type='password' placeholder='enter Password' onChange={((e)=>{Setpassword(e.target.value)})}></input>
 
-                    <label>Email</label>
-                    <input type='email' placeholder='user@gmail.com' onChange={((e)=>{SetEmail(e.target.value)})}></input>
+                    
+                    <input className="input" type='email' placeholder='user@gmail.com' onChange={((e)=>{SetEmail(e.target.value)})}></input>
 
-                    <button onClick={SignipByUser}>Signup</button>
+                    <button className="btn btn-primary" onClick={SignipByUser} style={{width:'270px'}}>Signup</button>
                 </div>
         </div>
       </Modal>
