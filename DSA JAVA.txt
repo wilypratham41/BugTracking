@@ -1,1 +1,2 @@
 Iterations : how many time a code activity is getting preformed... a for loop ..
+general considerations for cup iterations is 1/1 power 8. if cpu speed is 1GHZ giga Hrzds.
