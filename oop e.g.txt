@@ -1,0 +1,56 @@
+inheritance and poly : are considered as specialization i.e. their child will have same qualities as parent but also different of their own this concept is called as specialization.
+java doesnt support multiple inheritance
+1) this concept is carried out using interfaceses where we say a car have features of music player but a car is not music player: this is prespective of java which is more correct than c puls plus. 
+
+e.g.for inheritance is indian defense, pulser 400z
+
+genralization: this is concept is came under interfaces where  all common parts are gathered as comman unit.
+
+abstract classes : is said as 1st parent class will impose some standerds and child will override and follow this standards.
+
+e.g. for abstract class is insurance company and policy holder , jvm follow some standards to consider code as bytecode !!
+
+** the very first line of any class is invoke special<init> thats mean call parent class constructor. and normal invoke means calls that given method***
+
+
+Interface:  1)by default the method are public abstract no need to write.
+            2)meths cant be private.
+            3)i can have variables in interfaces.these variables are static and final
+	    4) interfaces can have static methods with body but cant nomral method with body.
+            5) interfaces can extend from another interface.
+            six) from java 8 we can have default methods with body in interface.  
+            7) from java 9 we can have private methods but cant be abstract.
+
+
+ 
+Inner class : class inside a class and interface also to reduce complexity.
+inner class access the elemets of outer class directly. but to access inner class data we need objects
+
+
+
+Exception Handling : A condition where program crashes i.e. stops working where it should not to is called exception handling.
+
+Java Exception Handling is a mechanism that handles runtime errors, allowing the program to continue its normal flow or terminate gracefully without crashing.
+Java Exception Handling is a process that manages runtime errors to prevent program crashes, allowing the program to either continue running or exit safely.
+
+In programming, exception handling is like a biker wearing a helmet. The helmet doesn't stop an accident from happening, but it minimizes the damage if one occurs. Similarly, exception handling doesn't prevent errors, but it ensures the program can handle them gracefully and avoid crashing."
+1)error handling mechanisms
+2)not avoid errors
+3) try catch must be writeen in heirarchy like child 1st then parent and last grand parent....
+4)throw : used inside method with obj... also used for unchecked exceptions
+5) throws : used with signature of methods.. and it it also used for checked an unchecked Exceptions
+vi) both throw and throws are used for user defined exceptions  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
