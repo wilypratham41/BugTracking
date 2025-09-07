@@ -1,0 +1,15 @@
+
+********************* Collection framework ****************************************
+
+
+Collection(interface)(Generic) all type of object: it is group of elememts or group of objects homogenous or hetrogenous objects.
+
+collection Frameworks : it is a Data Structure where in build classes and methods are there by java.
+
+List extends collection(interface) : Data with indexing, duplicates are allowed.-------1)Arraylist 2)Linked List 3)vector 4)Stack
+
+Set(interface) : no duplicates, No ordered data, only distinct------ 1] sorted set(in)  ---  1)TreeSet ----2) Hashset 3)LinkedHashset
+
+Queue(interface) : FIFO
+
+Map(intrface)no extend collecton : key value paired. 
