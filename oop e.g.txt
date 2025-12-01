@@ -42,9 +42,21 @@ In programming, exception handling is like a biker wearing a helmet. The helmet 
 vi) both throw and throws are used for user defined exceptions  
 
 
+thread vs process 
+thread : is smallest unit of process that, process an have multiple threads working independently. e.g. Microsoft word : spelling heker a thread, auto saving another thread, or brave browser, eah tab == new thread.
 
+multithreading: its a ability to execute multiple threads in single process simultaneously. they share similar resources.
 
+make a thread using java.lang package
+either make class extend from thread class or runnable interface 
 
+life cycle of thread :
+1> New : thread class obj done wilu ww = new wilu();  this is new state.
+2> Runnable : when ww.start(); thread is ready to start waiting for cpu time.
+3> running : when its executing.
+4> bloked/ Waiting : thread is wating when the resource is used by another one.
+5> termination: when finished the execution.   
+but actually there is no running stage only either its ready to run or running that is only RUNNABLE.
 
 
 
