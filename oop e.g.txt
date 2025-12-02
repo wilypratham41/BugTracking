@@ -59,6 +59,12 @@ life cycle of thread :
 but actually there is no running stage only either its ready to run or running that is only RUNNABLE.
 
 
+thread methods : 
+1) start : starting thread using thread.start() so run() method will executed.
+2) run () its override method from thread class. where actual logic gets executed.
+3) sleep : thread.sleep() is used to make delay in thread execution
+4) set priority : is used to set priority for thread execution. max -10, medium -5, low- 1 but the execution of thread after giving priority is not fixed. its depends upon JVM.
+5) interrupt : whatever task thread is performing stop it immediately. though its sleep or run.
 
 
 
