@@ -67,6 +67,7 @@ thread methods :
 5) interrupt : whatever task thread is performing stop it immediately. though its sleep or run.
 
 
+synchronisation: when2 threads are accessing same resource simultaneously then desire output cannot be archived. so we can use synchronised keyword with method signature to provide correct results.
 
 
 
