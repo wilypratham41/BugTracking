@@ -69,6 +69,9 @@ thread methods :
 
 synchronisation: when2 threads are accessing same resource simultaneously then desire output cannot be archived. so we can use synchronised keyword with method signature to provide correct results.
 
+synchronised block(this){
+
+} it can be written inside method where code should be used as accessed by a thread at a time.
 
 
 
